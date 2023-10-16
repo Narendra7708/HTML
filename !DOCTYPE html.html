@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Simple Calculator</title>
+    <style>
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calculator #output {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  text-align: right;
+}
+.calculator .keys button {
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" id="output" disabled />
+      <div class="keys">
+        <button onclick="clearOutput()">C</button>
+        <button onclick="updateOutput('/')">/</button>
+        <button onclick="updateOutput('*')">*</button>
+        <button onclick="updateOutput('-')">-</button>
+        <button onclick="updateOutput('+')">+</button>
+        <button onclick="updateOutput('7')">7</button>
+        <button onclick="updateOutput('8')">8</button>
+        <button onclick="updateOutput('9')">9</button>
+        <button onclick="updateOutput('4')">4</button>
+        <button onclick="updateOutput('5')">5</button>
+        <button onclick="updateOutput('6')">6</button>
+        <button onclick="updateOutput('1')">1</button>
+        <button onclick="updateOutput('2')">2</button>
+        <button onclick="updateOutput('3')">3</button>
+        <button onclick="updateOutput('0')">0</button>
+        <button onclick="calculate()">=</button>
+      </div>
+    </div>
+    <script>
+
+Javascript:
+// Get references to HTML elements
+const output = document.getElementById("output");
+
+// Function to update the output
+function updateOutput(value) {
+  output.value += value;
+}
+
+// Function to clear the output
+function clearOutput() {
+  output.value = "";
+}
+
+// Function to calculate the result
+function calculate() {
+  const result = eval(output.value);
+  output.value = result;
+}
+</script>
+  </body>
+</html>
