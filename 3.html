@@ -1,0 +1,27 @@
+<html>
+<body>
+
+10000 coders
+<script>
+    debugger;
+    function lcm(n){
+  function gcd(a,b){
+    if(b==0){
+      return a;
+    }
+    return gcd(b,a%b)
+  }
+  function s(a,b){
+    return (a*b)/gcd(a,b);
+  }
+  let result=1;
+  for(i=0;i<n.length;i++){
+    result=s(result,n[i])
+  }
+  return result
+}
+console.log(lcm([15,50]))
+</script>
+
+<body>
+</html>
